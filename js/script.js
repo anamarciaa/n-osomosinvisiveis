@@ -51,14 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+
   const form = document.getElementById("volunteer-form");
   const formStatus = document.getElementById("form-status");
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-   emailjs.sendForm('service_32te7iy', 'service_32te7iy', form)
-
+    emailjs.sendForm('service_32te7iy', 'service_32te7iy', form) 
       .then(() => {
         formStatus.textContent = "Mensagem enviada com sucesso!";
         form.reset();
@@ -68,4 +68,3 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
-
