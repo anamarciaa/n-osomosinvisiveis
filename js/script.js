@@ -67,5 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("form-status").textContent = "Erro ao enviar a mensagem, tente novamente.";
       });
   });
+emailjs.sendForm("service_xxx", "template_xxx", form)
+  .then(() => {
+    document.getElementById("form-status").textContent = "Mensagem enviada com sucesso!";
+  })
+  .catch(() => {
+    document.getElementById("form-status").textContent = "Erro ao enviar. Tente novamente.";
+  });
 
 });
