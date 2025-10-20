@@ -352,4 +352,15 @@ h1, h2, .volunteer__title {
   .pix__qrcode {
     max-width: 100%;
   }
+  .form-status--success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.form-status--error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
 }
