@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  
+  // Menu responsivo
   const menuToggle = document.querySelector(".navbar__toggle");
   const navLinks = document.querySelector(".navbar__links");
 
@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("show");
   });
 
-  
+  // Botão de doação leva ao Pix
   const donationCTA = document.getElementById("donation-cta");
   donationCTA.addEventListener("click", () => {
     document.getElementById("pix").scrollIntoView({ behavior: "smooth" });
   });
 
-
+  // Botões de doação mostram conteúdo
   const donationButtons = document.querySelectorAll(".donation__button");
   const donationText = document.getElementById("donation-text");
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
+  // Copiar chave Pix
   const copyBtn = document.getElementById("copy-pix");
   const pixKey = document.getElementById("pix-key");
   const copyStatus = document.getElementById("copy-status");
@@ -51,14 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-
+  // Envio de formulário com EmailJS
   const form = document.getElementById("volunteer-form");
   const formStatus = document.getElementById("form-status");
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_32te7iy', 'service_32te7iy', form) 
+    emailjs.sendForm('service_32te7iy', 'template_4lcwuiu', form) 
       .then(() => {
         formStatus.textContent = "Mensagem enviada com sucesso!";
         form.reset();
@@ -68,3 +68,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
