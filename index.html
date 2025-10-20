@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projeto social que promove dignidade e visibilidade para pessoas em situação de vulnerabilidade." />
+  <meta name="keywords" content="projeto social, doação, voluntariado, ajuda humanitária, invisíveis, Recife, Pernambuco" />
   <title>Não Somos Invisíveis</title>
-  <link rel="icon" type="img/logo.png" href="logo.png" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
   <header>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
       <div class="navbar__logo">
         <span>Não Somos Invisíveis</span>
       </div>
@@ -25,16 +26,15 @@
         <li><a href="#volunteer">Cadastro</a></li>
         <li><a href="#contact">Contato</a></li>
       </ul>
-      <div class="navbar__toggle">☰</div>
+      <div class="navbar__toggle" aria-label="Abrir menu">☰</div>
     </nav>
   </header>
 
-  
   <section id="hero" class="section hero fade-in">
     <div class="hero__content">
       <div class="hero__text">
         <h1>A sua ajuda é a luz<br>no fim do túnel<br>para alguém</h1>
-        <button class="button button--cta" id="donation-cta">Faça a sua doação</button>
+        <button class="button button--cta" id="donation-cta" aria-label="Botão para fazer doação">Faça a sua doação</button>
       </div>
       <div class="hero__image">
         <img src="img/image.png" alt="Equipe reunida" />
@@ -42,7 +42,6 @@
     </div>
   </section>
 
-  
   <section id="history" class="section history fade-in">
     <h2 class="history__title">Quem somos?</h2>
     <div class="history__content">
@@ -52,12 +51,11 @@
         <p><strong>Valores:</strong> Empatia, respeito, solidariedade e ação.</p>
       </div>
       <div class="history__image">
-        <img src="equipe.png" alt="Grupo solidário" />
+        <img src="img/equipe.png" alt="Grupo solidário" />
       </div>
     </div>
   </section>
 
- 
   <section id="donation" class="section donation fade-in">
     <h2 class="donation__title">Faça parte da corrente do bem</h2>
     <div class="donation__buttons">
@@ -70,18 +68,16 @@
     </div>
   </section>
 
-  
   <section id="pix" class="section pix fade-in">
     <h2 class="pix__title">A forma mais rápida e segura de ajudar é via Pix</h2>
-    <img src="qrcode.jpg" alt="QR Code Pix" class="pix__qrcode" />
+    <img src="img/qrcode.jpg" alt="QR Code Pix" class="pix__qrcode" />
     <div class="pix__container">
-      <input type="text" id="pix-key" class="pix__key" value="81 9 8823-4241" readonly />
-      <button id="copy-pix" class="pix__copy-button">Copiar chave Pix</button>
+      <input type="text" id="pix-key" class="pix__key" value="81 9 8823-4241" readonly aria-label="Chave Pix" />
+      <button id="copy-pix" class="pix__copy-button" aria-label="Copiar chave Pix">Copiar chave Pix</button>
     </div>
-    <p id="copy-status"></p>
+    <p id="copy-status" aria-live="polite"></p>
   </section>
 
-  
   <section id="volunteer" class="section volunteer fade-in">
     <h2 class="volunteer__title">Seja voluntário</h2>
     <p class="volunteer__description">Preencha o formulário abaixo para fazer parte do nosso grupo de voluntários</p>
@@ -97,17 +93,16 @@
       </select>
       <textarea name="message" placeholder="Mensagem (opcional)"></textarea>
       <button type="submit" class="button">Enviar</button>
-      <p id="form-status"></p>
+      <p id="form-status" aria-live="polite"></p>
     </form>
   </section>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("service_g8n3cn9");
-  })();
-</script>
 
-  
+  <script>
+    (function(){
+      emailjs.init("service_g8n3cn9");
+    })();
+  </script>
+
   <section id="contact" class="section contact fade-in">
     <h2 class="contact__title">Entre em contato</h2>
     <div class="contact__boxes">
@@ -123,7 +118,6 @@
     </div>
   </section>
 
- 
   <footer class="footer">
     <p>Contato: gruponaosomosinvisiveis@gmail.com</p>
     <p>Instagram: @naosomosinvisiveis</p>
@@ -133,6 +127,8 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
