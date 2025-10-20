@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+  
   const menuToggle = document.querySelector(".navbar__toggle");
   const navLinks = document.querySelector(".navbar__links");
 
@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("show");
   });
 
- 
+  
   const donationCTA = document.getElementById("donation-cta");
   donationCTA.addEventListener("click", () => {
     document.getElementById("pix").scrollIntoView({ behavior: "smooth" });
   });
 
-  
+
   const donationButtons = document.querySelectorAll(".donation__button");
   const donationText = document.getElementById("donation-text");
 
@@ -39,40 +39,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  
+
   const copyBtn = document.getElementById("copy-pix");
   const pixKey = document.getElementById("pix-key");
   const copyStatus = document.getElementById("copy-status");
 
   copyBtn.addEventListener("click", () => {
-    pixKey.select();
-    pixKey.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    copyStatus.textContent = "Chave Pix copiada!";
-    setTimeout(() => copyStatus.textContent = "", 2000);
+    navigator.clipboard.writeText(pixKey.value).then(() => {
+      copyStatus.textContent = "Chave Pix copiada!";
+      setTimeout(() => copyStatus.textContent = "", 2000);
+    });
   });
 
-  
-  emailjs.init("service_g8n3cn9");
-
   const form = document.getElementById("volunteer-form");
+  const formStatus = document.getElementById("form-status");
+
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     emailjs.sendForm('service_g8n3cn9', 'service_g8n3cn9', this)
       .then(() => {
-        document.getElementById("form-status").textContent = "Mensagem enviada com sucesso!";
+        formStatus.textContent = "Mensagem enviada com sucesso!";
         form.reset();
-      }, () => {
-        document.getElementById("form-status").textContent = "Erro ao enviar a mensagem, tente novamente.";
+      })
+      .catch(() => {
+        formStatus.textContent = "Erro ao enviar a mensagem, tente novamente.";
       });
   });
-emailjs.sendForm("service_xxx", "template_xxx", form)
-  .then(() => {
-    document.getElementById("form-status").textContent = "Mensagem enviada com sucesso!";
-  })
-  .catch(() => {
-    document.getElementById("form-status").textContent = "Erro ao enviar. Tente novamente.";
-  });
-
 });
+
