@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_32te7iy', 'service_32te7iy', this)
+   emailjs.sendForm('service_32te7iy', 'service_32te7iy', form)
+
       .then(() => {
         formStatus.textContent = "Mensagem enviada com sucesso!";
         form.reset();
