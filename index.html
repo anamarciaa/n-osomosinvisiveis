@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Não Somos Invisíveis</title>
+  <link rel="icon" type="image/pnp" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- =========================
+       CABEÇALHO / MENU
+  ========================== -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <span>Não Somos Invisíveis</span>
+      </div>
+      <ul class="navbar__links">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#history">História</a></li>
+        <li><a href="#donation">Doação</a></li>
+        <li><a href="#pix">Pix</a></li>
+        <li><a href="#volunteer">Cadastro</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+      <div class="navbar__toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- =========================
+       HERO (INÍCIO)
+  ========================== -->
+  <section id="hero" class="section hero fade-in">
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1>A sua ajuda é a luz<br>no fim do túnel<br>para alguém</h1>
+        <button class="button button--cta" id="donation-cta">Faça a sua doação</button>
+      </div>
+      <div class="hero__image">
+        <img src="image.png" alt="Equipe reunida" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       HISTÓRIA (QUEM SOMOS)
+  ========================== -->
+  <section id="history" class="section history fade-in">
+    <h2 class="history__title">Quem somos?</h2>
+    <div class="history__content">
+      <div class="history__text">
+        <p>O Não Somos Invisíveis nasceu do desejo de dar voz e visibilidade a pessoas em situação de vulnerabilidade. Atuamos com ações sociais, distribuição de alimentos, roupas e apoio emocional. Acreditamos que ninguém deve ser ignorado — todos merecem respeito, cuidado e oportunidade.</p>
+        <p><strong>Missão:</strong> Promover dignidade, acolhimento e transformação social.</p>
+        <p><strong>Valores:</strong> Empatia, respeito, solidariedade e ação.</p>
+      </div>
+      <div class="history__image">
+        <img src="equipe.png" alt="Grupo solidário" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       DOAÇÃO (CORRENTE DO BEM)
+  ========================== -->
+  <section id="donation" class="section donation fade-in">
+    <h2 class="donation__title">Faça parte da corrente do bem</h2>
+    <div class="donation__buttons">
+      <button class="donation__button" data-target="fin">Doação financeira</button>
+      <button class="donation__button" data-target="itens">Doação de itens</button>
+      <button class="donation__button" data-target="tempo">Doação de tempo</button>
+    </div>
+    <div class="donation__text" id="donation-text">
+      <p>Selecione um tipo de doação acima para ver os detalhes.</p>
+    </div>
+  </section>
+
+  <!-- =========================
+       PIX
+  ========================== -->
+  <section id="pix" class="section pix fade-in">
+    <h2 class="pix__title">A forma mais rápida e segura de ajudar é via Pix</h2>
+    <img src="qrcode.jpg" alt="QR Code Pix" class="pix__qrcode" />
+    <div class="pix__container">
+      <input type="text" id="pix-key" class="pix__key" value="81 9 8823-4241" readonly />
+      <button id="copy-pix" class="pix__copy-button">Copiar chave Pix</button>
+    </div>
+    <p id="copy-status"></p>
+  </section>
+
+  <!-- =========================
+       VOLUNTÁRIO
+  ========================== -->
+  <section id="volunteer" class="section volunteer fade-in">
+    <h2 class="volunteer__title">Seja voluntário</h2>
+    <p class="volunteer__description">Preencha o formulário abaixo para fazer parte do nosso grupo de voluntários</p>
+    <form id="volunteer-form" class="form">
+      <input type="text" name="from_name" placeholder="Nome completo" required />
+      <input type="email" name="from_email" placeholder="E-mail" required />
+      <select name="availability" required>
+        <option value="">Disponibilidade</option>
+        <option value="finais de semana">Finais de semana</option>
+        <option value="noite">Noite</option>
+        <option value="manhã">Manhã</option>
+        <option value="tarde">Tarde</option>
+      </select>
+      <textarea name="message" placeholder="Mensagem (opcional)"></textarea>
+      <button type="submit" class="button">Enviar</button>
+      <p id="form-status"></p>
+    </form>
+  </section>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("service_g8n3cn9");
+  })();
+</script>
+
+  <!-- =========================
+       CONTATO
+  ========================== -->
+  <section id="contact" class="section contact fade-in">
+    <h2 class="contact__title">Entre em contato</h2>
+    <div class="contact__boxes">
+      <div class="contact__box">
+        <p><strong>E-mail:</strong> gruponaosomosinvisiveis@gmail.com</p>
+      </div>
+      <div class="contact__box">
+        <p><strong>Telefone:</strong> 81 9 8823-4241</p>
+      </div>
+      <div class="contact__box">
+        <p><strong>Instagram:</strong> @naosomosinvisiveis</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
+  <footer class="footer">
+    <p>Contato: gruponaosomosinvisiveis@gmail.com</p>
+    <p>Instagram: @naosomosinvisiveis</p>
+    <p>Site criado por @ana_dev</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
