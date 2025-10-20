@@ -9,7 +9,6 @@
   <link rel="icon" type="image/png" href="img/logo.png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -51,7 +50,7 @@
         <p><strong>Valores:</strong> Empatia, respeito, solidariedade e ação.</p>
       </div>
       <div class="history__image">
-        <img src="img/equipe.png" alt="Grupo solidário" />
+        <img src="img/img/equipe.png" alt="Grupo solidário" />
       </div>
     </div>
   </section>
@@ -97,12 +96,6 @@
     </form>
   </section>
 
-  <script>
-    (function(){
-      emailjs.init("service_g8n3cn9");
-    })();
-  </script>
-
   <section id="contact" class="section contact fade-in">
     <h2 class="contact__title">Entre em contato</h2>
     <div class="contact__boxes">
@@ -125,10 +118,15 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- SDK atualizado do EmailJS -->
+  <script type="module">
+   import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+emailjs.init("service_g8n3cn9");
+
+  </script>
 </body>
 </html>
-
-
 
 
 
